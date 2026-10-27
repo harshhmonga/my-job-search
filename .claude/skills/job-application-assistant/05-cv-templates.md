@@ -4,7 +4,6 @@ framework_version: 1.4.8
 
 # CV Templates and Tailoring Guide
 
-<!-- SETUP: Profile statements and section ordering are personalized by running /setup -->
 
 ## Template: LaTeX moderncv (Banking Style)
 
@@ -59,7 +58,7 @@ Expected output: `Output written on main_<company>_<role>.pdf (2 pages, ...)`. A
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=blue,
-    pdftitle={[YOUR_NAME] - CV},
+    pdftitle={Harsh Monga - CV},
     % Keep pdfpagemode=UseNone: this block runs after moderncv's own
     % \AtEndPreamble (moderncv.cls sets pdfpagemode there), so a FullScreen
     % value here would win and open every CV in fullscreen presentation mode.
@@ -69,13 +68,14 @@ Expected output: `Output written on main_<company>_<role>.pdf (2 pages, ...)`. A
 \usepackage{import}
 
 % Personal data
-\name{[FIRST_NAME]}{[LAST_NAME]}
+\name{Harsh}{Monga}
 % If you have no address to list, DELETE this whole line. \address{}{}{} fails
 % with "There's no line here to end" on every moderncv version.
-\address{[YOUR_ADDRESS]}{}{}
-\phone[mobile]{[YOUR_PHONE]}
-\email{[YOUR_EMAIL]}
-\extrainfo{\href{[YOUR_LINKEDIN_URL]}{LinkedIn}, \href{[YOUR_GITHUB_URL]}{GitHub}}
+\address{Delhi NCR, India}{}{}
+\phone[mobile]{+91 9999837879}
+\email{harshhmonga@gmail.com}
+% GitHub deliberately omitted (no public work yet); portfolio used instead
+\extrainfo{\href{https://www.linkedin.com/in/harshhmonga}{LinkedIn}, \href{https://harshportfolio-pearl.vercel.app}{Portfolio}}
 
 \begin{document}
 \makecvtitle
@@ -136,12 +136,14 @@ When the role sits outside your home domain, **lead with the domain-transfer arg
 
 **Create 2-3 profile statement templates for your main role types:**
 
-<!-- SETUP: These are populated based on your background -->
-**For [YOUR_PRIMARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_1]
+**For Staff/Lead SDET and Mobile QA Lead roles:**
+> Associate Staff Engineer (SDET) with 4.5 years of experience owning end-to-end mobile quality for McKinsey \& Company and Cox Automotive as a Nagarro consultant. Architects Page Object Model frameworks from scratch with Appium, Python, pytest, and BDD for React Native iOS and Android, and with Swift and XCUITest for native iOS. Owns release sign-off with risk-based evidence and mentors engineers, having taken 60+ production releases through go/no-go.
 
-**For [YOUR_SECONDARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_2]
+**For Test Automation Architect / Quality Engineering Lead roles:**
+> Quality engineer who designs automation frameworks and quality strategy, not just test cases. Built a cross-platform React Native framework from scratch with scenario-level app state management for reliable parallel runs, co-built a Swift/XCUITest framework that raised automated coverage by 30\%+, and authored the team's AI code-review standards. 4.5 years at Nagarro across McKinsey \& Company and Cox Automotive engagements.
+
+**For AI/LLM Quality Engineer roles:**
+> SDET specializing in AI feature quality: owns testing of a real-time voice AI in a leading US consumer fitness app, including conversational responses, interruptions, and validation strategies for non-deterministic output. Built an AI-assisted QA workflow connecting Claude Code agents over MCP to TestRail, Jira, Confluence, and Datadog, cutting triage and reporting from most of a day to about an hour, and Claude Code skills that generated 100+ peer-reviewed test scenarios.
 
 Statements labeled *[Used for: <company>_<role>]* were extracted from archived application drafts by `/setup` Path A. They are **phrasing references, never fact sources**: when drafting from one, every factual claim still comes from `01-candidate-profile.md` - a past tailored draft does not vouch for its own accuracy.
 

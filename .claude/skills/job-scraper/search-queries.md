@@ -1,7 +1,5 @@
 # Search Queries for Job Scraper
 
-<!-- SETUP: Customize these queries based on your skills, target roles, and location -->
-
 ## Installed portal CLIs (primary for `/scrape`)
 
 `/scrape` discovers every portal skill under `.agents/skills/*/SKILL.md` and runs its CLI first. Shipped country-agnostic CLIs include `linkedin-search` and `freehire-search`; Danish demos and any skill you add with `/add-portal` are included the same way. You do **not** need a matching `site:` line below for those CLIs to run.
@@ -12,69 +10,120 @@ The `site:` query templates in this file are the **WebSearch fallback** — for 
 
 ## Search Sites
 
-Primary (your market's job boards - scaffold one with `/add-portal`):
-- **[YOUR_JOB_BOARD]** - your market's largest general job board
-- **linkedin.com/jobs** - LinkedIn job listings (filter: [YOUR_COUNTRY] / [YOUR_CITY]); also covered by `linkedin-search` CLI
-- **[YOUR_INDUSTRY_JOB_BOARD]** - a niche/industry board for your field (optional)
-- **[YOUR_ADDITIONAL_JOB_BOARD]** - another major board for your market (optional)
+Primary (CLI skills, auto-discovered by `/scrape`):
+- **linkedin.com/jobs** - `linkedin-search` CLI (India: Pune, Bengaluru, Delhi NCR, remote; overseas target countries)
+- **freehire** - `freehire-search` CLI
+
+Indian and remote boards (WebSearch `site:` fallback until a CLI is added with `/add-portal`):
+- **naukri.com** - largest Indian general board
+- **foundit.in** - (formerly Monster India)
+- **instahyre.com** - curated tech roles, product companies
+- **hirist.tech** - tech-only board (QA/SDET category)
+- **wellfound.com** - startups (formerly AngelList Talent)
+- **himalayas.app** - remote-first roles, filterable by hiring country (India)
 
 Secondary (company career pages via Google):
 - Direct Google searches with `site:` filters for known target companies
 
+Danish demo portals (Jobindex, Jobbank, Jobdanmark, Jobnet) stay **disabled** - not a target market.
+
 ## Query Categories
 
-Queries are grouped by priority. Write **each category in every language from your Languages table** (see Language scope above). Combine each query with your location terms (e.g. your city, region, or metro area) where the site supports it.
+Queries are grouped by priority. Candidate languages are English and Hindi; postings in these markets are written in English, so queries are English-only (a Hindi variant adds no results for tech roles). Combine each query with the location terms in the Location Filter below.
 
-**Organize by function, not job title.** The same underlying work carries different titles across companies and markets (a "Data Scientist" role at one employer may be posted as "Insights Analyst" or "Data Consultant" at another). Name each priority category after the function it covers, and list several plausible job titles as query variants within that category rather than betting an entire priority tier on one exact title string.
+**Geographic priority (applies to every category):** Pune and Bengaluru first, then overseas sponsored markets, then remote and Delhi NCR. Run each category's India queries for `Pune` and `Bengaluru` (also `Bangalore`) before anything else.
 
-### Priority 1: [YOUR_PRIMARY_ROLE_TYPE]
+**Organize by function, not job title.** The same underlying work carries different titles across companies and markets; each category lists several title variants.
 
-These match your strongest and most desired career direction.
+### Priority 0 (always run, every scrape): Mobile Automation Engineer / Mobile Testing
 
-```
-site:[YOUR_JOB_BOARD] "[YOUR_PRIMARY_JOB_TITLE_1]" [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "[YOUR_PRIMARY_JOB_TITLE_2]" [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "[YOUR_KEY_SKILL]" [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_PRIMARY_JOB_TITLE_1]" [YOUR_COUNTRY]
-```
-
-### Priority 2: [YOUR_DOMAIN_EXPERTISE]
-
-These match your domain expertise.
+User rule (2026-10-27): **always** search for mobile automation engineer and mobile testing roles on every run, including default and focus-area runs, and mark every such posting **High** fit in Step 3, ranked above all other High rows. A posting counts when its title or core duties are mobile test automation or mobile app testing (Appium, XCUITest, Espresso, Maestro, iOS/Android testing), at any seniority. The override does not bypass the hard gates: an undeclared required language (Language Gate) or a failed Eligibility/Location gate still makes it Low.
 
 ```
-site:[YOUR_JOB_BOARD] [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] OR [YOUR_REGION]
-site:[YOUR_JOB_BOARD] [YOUR_DOMAIN_KEYWORD_2] [YOUR_COUNTRY]
-site:linkedin.com/jobs [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] [YOUR_COUNTRY]
+site:linkedin.com/jobs "Mobile Automation Engineer" OR "Mobile Test Automation Engineer" India
+site:linkedin.com/jobs "Mobile QA Engineer" OR "Mobile Testing" Pune OR Bengaluru OR Gurugram OR Noida
+site:naukri.com "Mobile Automation" Appium OR XCUITest
+site:linkedin.com/jobs "Mobile QA" OR "Mobile Test Automation" (Dubai OR London OR Amsterdam OR Berlin OR Dublin)
 ```
 
-### Priority 3: [YOUR_ADJACENT_ROLE_TYPE]
+Title variants: Mobile Automation Engineer, Mobile Test Automation Engineer, Mobile QA Engineer, Mobile Tester, Mobile App Test Engineer, QA Engineer (Mobile), SDET (Mobile), iOS/Android Test Automation Engineer
 
-Adjacent roles you could pivot into.
+### Priority 1: Senior/Lead mobile test automation (SDET track)
 
-```
-site:[YOUR_JOB_BOARD] "[YOUR_ADJACENT_TITLE_1]" [YOUR_KEY_SKILL] [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "[YOUR_ADJACENT_TITLE_2]" [YOUR_KEY_SKILL] [YOUR_CITY]
-```
-
-### Priority 4: Broader Technical / Consulting
-
-Wider net for general technical roles.
+Owning mobile quality and automation frameworks at Staff/Lead level. Product companies preferred.
 
 ```
-site:[YOUR_JOB_BOARD] [YOUR_KEY_SKILL] developer [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_KEY_SKILL] developer" [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "technical consultant" [YOUR_DOMAIN] [YOUR_CITY]
+site:linkedin.com/jobs "Lead SDET" mobile Pune OR Bengaluru
+site:linkedin.com/jobs "Staff SDET" OR "Senior SDET" Appium Bengaluru
+site:naukri.com "SDET" Appium Python Pune
+site:naukri.com "Lead SDET" OR "SDET Lead" Bengaluru
+site:instahyre.com "SDET" mobile automation Bengaluru
+site:hirist.tech "SDET" Appium Pune OR Bengaluru
+site:foundit.in "Mobile Automation Lead" XCUITest OR Appium
+site:linkedin.com/jobs "Mobile QA Lead" OR "Mobile Test Lead" Pune OR Bengaluru
+site:linkedin.com/jobs "Senior SDET" OR "Mobile QA Lead" Dubai
+```
+
+Title variants: Lead SDET, Staff SDET, Senior SDET, SDET III, Principal SDET, Mobile QA Lead, Mobile Test Automation Lead, Senior QA Automation Engineer (Mobile), Senior Software Engineer in Test
+
+### Priority 2: Test automation architecture / quality engineering leadership
+
+Designing frameworks and quality strategy across teams; IC, manager, or hybrid.
+
+```
+site:linkedin.com/jobs "Test Automation Architect" mobile Pune OR Bengaluru
+site:linkedin.com/jobs "Quality Engineering Lead" OR "QE Lead" Bengaluru
+site:naukri.com "Automation Architect" Appium OR XCUITest
+site:instahyre.com "QA Lead" OR "Quality Engineering Manager" Bengaluru OR Pune
+site:hirist.tech "Test Architect" OR "QA Architect" mobile
+site:linkedin.com/jobs "QA Automation Lead" OR "Test Automation Architect" (Dubai OR London OR Amsterdam OR Berlin OR Dublin)
+site:linkedin.com/jobs "Senior SDET" mobile "visa sponsorship" (UK OR Germany OR Netherlands OR Ireland OR Europe)
+```
+
+Title variants: Test Automation Architect, QA Architect, Quality Engineering Lead, QE Manager, Engineering Manager - Quality, Head of QA (smaller product companies)
+
+### Priority 3: AI / LLM quality engineering
+
+Testing and evaluating AI features; building AI-assisted QA workflows.
+
+```
+site:linkedin.com/jobs "AI Quality Engineer" OR "LLM QA" OR "AI Test Engineer"
+site:linkedin.com/jobs "SDET" "LLM" OR "generative AI" Bengaluru OR Pune
+site:wellfound.com "QA" OR "SDET" AI LLM India
+site:himalayas.app "QA Engineer" AI remote India
+site:naukri.com "AI testing" OR "GenAI testing" SDET
+site:linkedin.com/jobs "AI Evaluation Engineer" OR "LLM Evaluation" remote
+```
+
+Title variants: AI Quality Engineer, AI/ML Test Engineer, LLM QA Engineer, AI Evaluation Engineer, QA Engineer - AI Products, SDET (GenAI)
+
+### Priority 4: Last-resort directions (wider net)
+
+Only surface these when Priorities 1-3 are thin. Score Career Alignment lower.
+
+```
+site:linkedin.com/jobs "Developer Productivity Engineer" OR "AI Tooling Engineer" Bengaluru
+site:wellfound.com "AI engineer" agents MCP India
+site:linkedin.com/jobs "iOS Developer" Swift Pune OR Bengaluru
+site:naukri.com "React Native Developer" Pune OR Bengaluru
+site:himalayas.app "QA Automation Engineer" remote India
 ```
 
 ## Location Filter
 
-When evaluating results, verify the job location is within reasonable commute distance from your home. Define acceptable areas:
-- [YOUR_CITY] and surrounding areas
-- [ACCEPTABLE_AREA_1]
-- [ACCEPTABLE_AREA_2]
-- [BORDERLINE_AREA] (borderline - ~X min by transit)
-- [TOO_FAR_AREA] (too far)
+Home base: Delhi NCR, India (currently remote). Flexible on location; relocation within India welcome; relocation abroad only with visa sponsorship.
+- **Ideal:** Pune, Bengaluru (on-site, hybrid, or remote)
+- **Ideal:** Remote (India-based employer, or international employer hiring in India / via EOR)
+- **Acceptable:** Dubai (UAE) with employer-provided work visa
+- **Acceptable:** Europe (incl. UK) with visa sponsorship - e.g. UK, Germany, Netherlands, Ireland
+- **Out of scope (since 2026-10-25):** rest of the Middle East (Abu Dhabi, Saudi Arabia, Qatar, etc.), Singapore, Canada, Australia, USA
+- **Acceptable:** Delhi NCR (Gurugram, Noida, Delhi) - home base
+- **Borderline:** Other Indian cities (Hyderabad, Mumbai, Chennai, etc.)
+- **Too far / exclude:** USA; any overseas role that says no sponsorship or requires citizenship/PR; night shifts or permanent US-hours overlap
+
+## Salary Filter
+
+India-based roles: exclude when the posted range tops out below **17 LPA INR**. If no salary is posted, include and mark "salary unverified". Overseas: no fixed floor.
 
 ## Language Filter
 

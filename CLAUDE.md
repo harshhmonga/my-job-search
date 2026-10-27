@@ -1,10 +1,7 @@
-# Job Application Assistant for [YOUR_NAME]
-
-<!-- SETUP: This file is populated by running /setup -->
-<!-- After running /setup, all [PLACEHOLDER] tokens will be replaced with your actual information -->
+# Job Application Assistant for Harsh Monga
 
 ## Role
-This repo is a job application workspace. Claude acts as a career advisor and application assistant for [YOUR_NAME], helping with:
+This repo is a job application workspace. Claude acts as a career advisor and application assistant for Harsh Monga, helping with:
 1. **Job fit evaluation** - Assess job postings against your profile (skills, experience, behavioral traits)
 2. **CV tailoring** - Adapt existing CV templates (LaTeX/moderncv) to target specific roles
 3. **Cover letter writing** - Draft targeted cover letters using existing templates (LaTeX)
@@ -13,79 +10,71 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ## Candidate Profile
 
-<!-- This section is auto-populated by /setup. You can also fill it in manually. -->
-
 ### Identity
-- **Name:** [YOUR_NAME]
-- **Location:** [YOUR_CITY], [YOUR_COUNTRY] ([YOUR_COMMUTE_CONSTRAINTS])
+- **Name:** Harsh Monga
+- **Location:** Delhi NCR, India (currently remote; Nagarro main office in Gurugram). Flexible: open to remote (India or international), relocation within India, and relocation abroad **with visa sponsorship** (required).
 - **Languages:**
   | Language | Level |
   |----------|-------|
-  | [LANGUAGE] | [LEVEL] |
-  <!-- Every language you work in professionally, with your level (CEFR, "native," "professional
-  working proficiency," whatever your CV/LinkedIn use - no need to force it into one scale). An
-  undeclared language is a hard deal-breaker if a posting requires it; a declared language at a
-  lower level than a posting wants is flagged for your own judgment, not auto-rejected. See
-  04-job-evaluation.md's Language Gate. -->
-- **CV language:** [YOUR_CV_LANGUAGE] <!-- English unless your market expects otherwise; /setup asks -->
+  | English | Fluent |
+  | Hindi | Fluent |
+  <!-- An undeclared language is a hard deal-breaker if a posting requires it; a declared
+  language at a lower level than a posting wants is flagged for your own judgment, not
+  auto-rejected. See 04-job-evaluation.md's Language Gate. -->
+- **CV language:** English
 
-- **Status:** [YOUR_EMPLOYMENT_STATUS]
-- **LinkedIn headline:** "[YOUR_LINKEDIN_HEADLINE]"
+- **Status:** Employed - Associate Staff Engineer (SDET) at Nagarro since 1 Oct 2026
+- **Contact:** +91 9999837879 | harshhmonga@gmail.com | linkedin.com/in/harshhmonga | harshportfolio-pearl.vercel.app (GitHub github.com/harshhmonga exists but has no public work - do not link on CVs)
+- **LinkedIn headline:** "Automation Engineer | Mobile & UI Automation Expert (XCUITest, Swift) | SDET | Cracking Bugs in IT with Precision"
+- **Compensation:** Current CTC 10 LPA INR. Minimum for India-based roles: **17 LPA INR**. Overseas: no fixed floor, judge against local market.
 
 ### Education
-<!-- List your degrees, most recent first -->
-- **[DEGREE_LEVEL] in [FIELD]** ([YEAR_START]-[YEAR_END]) - [INSTITUTION]
-  - Thesis: "[THESIS_TITLE]"
-  - Topics: [KEY_TOPICS]
+- **B.Tech in Computer Science and Engineering** (2018-2022) - Krishna Engineering College, Ghaziabad (affiliated to AKTU)
 
 ### Professional Experience
-<!-- List your roles, most recent first -->
-- **[JOB_TITLE]** ([START_DATE] - [END_DATE]) - **[COMPANY]** ([LOCATION])
-  - [KEY_RESPONSIBILITY_1]
-  - [KEY_RESPONSIBILITY_2]
-  - [KEY_ACHIEVEMENT]
+- **Nagarro** (May 2022 - Present) - Gurugram, India (remote). Associate Engineer (May 2022) -> Engineer (Sep 2023) -> Senior Engineer (Apr 2025) -> Associate Staff Engineer (1 Oct 2026)
+  - **Client: McKinsey & Company** (Mar 2026 - Present): architected a React Native iOS/Android automation framework from scratch (Appium, Python, pytest, BDD, Page Object Model); owns quality of a consumer fitness app's real-time voice AI; built a Claude Code + MCP workflow (TestRail, Jira, Confluence, Datadog) cutting triage/reporting from most of a day to about an hour; Claude Code skills/agents generated 100+ peer-reviewed scenarios; release sign-off, AI code-review standards, mentored 5 engineers
+  - **Client: Cox Automotive** (Jan 2023 - Feb 2026): co-built Swift/XCUITest POM framework (+30% automated coverage, Azure DevOps CI); monkey/stress testing found 20+ edge-case crashes; 60% less manual regression across 2 enterprise apps; 60+ production releases to go/no-go
+- **Frontend Developer** (Sep 2021 - Apr 2022) - **Luezoid Technologies** (India)
+  - Responsive web interfaces in JavaScript, HTML, CSS
 
 ### Technical Skills
-- **Primary:** [YOUR_PRIMARY_SKILLS]
-- **Secondary:** [YOUR_SECONDARY_SKILLS]
-- **Domain:** [YOUR_DOMAIN_EXPERTISE]
-- **Software:** [YOUR_TOOLS_AND_SOFTWARE]
+- **Primary:** Mobile test automation - Appium (UiAutomator2/XCUITest drivers), Python, pytest, pytest-bdd, Swift, XCUITest/XCTest, Page Object Model, parallel execution, real-device/simulator testing
+- **Secondary:** AI-assisted engineering (Claude Code skills/agents, MCP integration, prompt engineering, GitHub Copilot, LLM output validation), JavaScript, SQL, Postman/REST API testing, React Native
+- **Domain:** Mobile quality engineering (React Native, native iOS, Android), AI feature quality (real-time voice AI, non-deterministic LLM features), test strategy, risk-based release sign-off
+- **Software:** Azure DevOps, Git, TestRail, Jira, Confluence, Datadog, Postman
 
 ### Certifications
-<!-- List relevant certifications with dates -->
-- **[CERTIFICATION_NAME]** - [HOURS]h - completed [DATE]
+- None listed.
 
 ### Publications
-<!-- List peer-reviewed publications, if any -->
-- [AUTHOR_LIST] ([YEAR]). [TITLE]. [JOURNAL].
+- None listed.
 
 ### Awards
-<!-- List relevant awards, hackathons, competitions -->
-- [AWARD_NAME] - [EVENT] ([YEAR])
+- None listed.
 
 ### Behavioral Profile
-<!-- Your behavioral assessment results (PI, DISC, Myers-Briggs, or self-assessment) -->
-- **[TRAIT_1]** - [DESCRIPTION]
-- **[TRAIT_2]** - [DESCRIPTION]
-- **Strengths:** [YOUR_STRENGTHS]
-- **Growth areas:** [YOUR_GROWTH_AREAS]
-- **Thrives in:** [YOUR_IDEAL_ENVIRONMENT]
+- **Ownership mindset** - takes end-to-end responsibility for quality, including go/no-go release calls
+- **End-user thinking** - hunts edge cases others miss; strong at monkey/exploratory testing
+- **Strengths:** bug finding, framework design, AI-driven workflow automation, direct (situation-aware) communication, situational decision-making
+- **Growth areas:** deepening AI and mobile domain expertise
+- **Thrives in:** challenging problems, full autonomy or a technical mentor as manager, mid-sized teams; open to IC, people-management, or hybrid tech-lead roles
 
 ### What Excites You
-<!-- What motivates you professionally -->
-- [PASSION_1]
-- [PASSION_2]
+- Challenging technical problems, finding bugs, monkey testing
+- Implementing AI and building workflows with AI (Claude Code, MCP)
+- (Drains: manual documentation, repeated regression cycles, a lot of meetings)
 
 ### Target Sectors
-<!-- Industries and companies you're targeting -->
-- [SECTOR_1]: [EXAMPLE_COMPANIES]
-- [SECTOR_2]: [EXAMPLE_COMPANIES]
+- Product companies first (any sector; AI-first and mobile-first products are a bonus), then IT services/consultancies
+- Target roles: Staff/Lead SDET, Mobile QA Lead, Test Automation Architect, Quality Engineering Lead, AI/LLM Quality Engineer. Last resort: AI tooling / developer productivity engineer, iOS or React Native developer
+- Geography (updated 2026-10-25): India, Dubai, and Europe (incl. UK). India: Pune and Bengaluru first, also remote and Delhi NCR. Dubai and Europe need visa sponsorship / employer work visa. Not the rest of the Middle East, Singapore, Canada, Australia or USA.
 
 ### Deal-breakers
-<!-- Hard constraints on job search. Language requirements are handled separately and
-automatically from your Languages table above - don't duplicate them here. -->
-- [DEALBREAKER_1]
-- [DEALBREAKER_2]
+- Salary below 17 LPA INR for India-based roles
+- Pure maintenance of legacy test suites with no new building
+- Night shifts or permanent US-hours overlap
+- Dubai or Europe roles without visa sponsorship (handled by the Eligibility Gate); roles outside India, Dubai and Europe (for now)
 
 ## Repo Structure
 - `cv/` - LaTeX CV variants (moderncv template, banking style)

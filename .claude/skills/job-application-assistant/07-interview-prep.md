@@ -39,6 +39,68 @@ Keep answers to 1-2 minutes. Be specific. End with what you learned or would do 
 
 <!-- Add more STAR examples as needed. Aim for 4-6 covering different competencies. -->
 
+## STAR Candidates (Complete Manually)
+
+### AI-assisted triage workflow with Claude Code + MCP
+**Source:** CV / LinkedIn - Nagarro, McKinsey & Company client
+**What happened:** Connected Claude Code agents over MCP to TestRail, Jira, Confluence, and Datadog (custom REST where no connector existed), cutting triage, defect reporting, and documentation from most of a day to about an hour.
+**Why it matters:** "Tell me about an innovation you drove", "How do you use AI in your work?", "Describe a process you improved"
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### Cross-platform React Native automation framework from scratch
+**Source:** CV - Nagarro, McKinsey & Company client
+**What happened:** Architected an Appium/Python/pytest Page Object Model framework with BDD and scenario-level app state management for reliable parallel runs on a two-week release cadence.
+**Why it matters:** "Describe a framework you designed", "How do you handle flaky tests?", "Technical architecture decisions"
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### Forced-app-update decision with risk-based evidence
+**Source:** CV - Nagarro, McKinsey & Company client
+**What happened:** Drove a forced-app-update decision with stakeholders using risk-based evidence.
+**Why it matters:** "Tell me about influencing a decision without authority", "Disagreement with stakeholders", "Data-driven decision"
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### Monkey and stress testing that found 20+ crashes
+**Source:** CV / LinkedIn - Nagarro, Cox Automotive client
+**What happened:** Monkey and stress testing surfaced 20+ edge-case crashes plus ANR, state-corruption, and deep-link defects that scripted regression missed.
+**Why it matters:** "Tell me about a critical bug you found", "Going beyond the test plan", "Exploratory testing approach"
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### Mentoring 5 engineers and authoring AI code-review standards
+**Source:** CV / LinkedIn - Nagarro (mentoring metric on LinkedIn is approximate: ~30% fewer review cycles)
+**What happened:** Mentored 5 engineers on Git workflows, test strategy, and bug triage, and authored AI code-review standards for the team.
+**Why it matters:** "Leadership experience", "How do you raise team standards?", "Staff-level impact"
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### Testing real-time voice AI and non-deterministic LLM features
+**Source:** CV / LinkedIn - Nagarro, McKinsey & Company client
+**What happened:** Owned quality of a consumer fitness app's real-time voice AI across live sessions, conversational responses, and interruptions (calls, audio route changes).
+**Why it matters:** "How do you test non-deterministic systems?", "Testing AI/LLM features", "Ambiguous requirements"
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
 ## Common Tough Questions
 
 ### "Why did you leave [previous company]?"

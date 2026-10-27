@@ -4,7 +4,6 @@ framework_version: 1.2.7
 
 # Job Evaluation Framework
 
-<!-- SETUP: Skill match areas and career goals are personalized by running /setup -->
 
 ## Eligibility Gate — run before scoring
 
@@ -27,6 +26,12 @@ Read the posting's eligibility / work rights / "who can apply" section **verbati
 **Report an eligibility failure to the user with the quoted source** rather than silently dropping the role. They may know something about their own status that the profile does not record.
 
 If the candidate's permit also constrains *hours* or *start date* (a student visa with a term-time cap, a permit that begins on graduation), record that as a second gate under this section during `/setup`, with the specific dates. Do not merge it with the eligibility question above — they fail for different reasons and need different answers.
+
+### Candidate-specific eligibility (Harsh Monga)
+- **India:** Indian citizen - no eligibility restriction for India-based roles.
+- **Dubai (UAE) and Europe (incl. UK):** **visa sponsorship / employer-provided work visa required.** Note: some UAE roles are Emiratization-reserved or require Arabic, and some European roles require the local language (e.g. German, Dutch) - both fail the gates. All other overseas markets (rest of the Middle East, Singapore, Canada, Australia, USA) are out of scope since 2026-10-25. A posting that says "no sponsorship", "must have right to work in X", or requires citizenship/PR is a **FAIL**. Silence on sponsorship = PROCEED, mark unverified, and check the employer's careers page.
+- **USA:** out of scope - skip.
+- **Remote for international employers from India:** PASS if the employer hires in India directly or via an Employer of Record; FLAG if it requires a local entity/residency.
 
 A role that fails this gate is not scored and not drafted. Everything below applies only to roles that pass it.
 
@@ -60,9 +65,9 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 40-59 | Partial match, significant upskilling needed |
 | 0-39 | Fundamental mismatch |
 
-**Strong match areas:** [YOUR_PRIMARY_SKILLS]
-**Moderate match areas:** [YOUR_SECONDARY_SKILLS]
-**Weak match areas:** [SKILLS_YOU_LACK]
+**Strong match areas:** Mobile test automation (Appium with UiAutomator2/XCUITest drivers, Python, pytest, pytest-bdd, Swift, XCUITest/XCTest), Page Object Model framework design, iOS/Android/React Native testing, CI integration (Azure DevOps), test strategy and risk-based release sign-off, monkey/stress/exploratory testing, AI-assisted QA (Claude Code skills/agents, MCP integrations), testing real-time voice AI and non-deterministic LLM features
+**Moderate match areas:** REST API testing (Postman), JavaScript, SQL, Git workflows, TestRail/Jira/Confluence/Datadog, mentoring and code-review standards, GitHub Copilot, React Native app context, frontend web (HTML/CSS)
+**Weak match areas:** Web UI automation frameworks (Selenium, Playwright, Cypress), Java/Kotlin/Espresso, performance/load testing tools (JMeter, k6, Gatling), cloud/DevOps (AWS, GCP, Docker, Kubernetes), GitHub Actions/Jenkins, formal LLM evaluation frameworks and ML fundamentals, backend/service development, security testing
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for? Match on the function and nature of the work performed, not the literal job title - a "Data Consultant" and a "Data Scientist" role can be functionally identical.
@@ -74,9 +79,9 @@ Does work history align with what they're looking for? Match on the function and
 | 40-59 | Adjacent experience, would need to make the case |
 | 0-39 | Unrelated experience |
 
-**Strong:** [YOUR_DIRECT_EXPERIENCE_DOMAINS]
-**Moderate:** [YOUR_ADJACENT_EXPERIENCE]
-**Entry-level:** [ROLES_WITH_LIMITED_EXPERIENCE]
+**Strong:** SDET / mobile QA automation engineer, senior-to-staff level (4.5 years); mobile quality lead on client engagements (McKinsey & Company, Cox Automotive via Nagarro); AI feature quality (voice AI, LLM features)
+**Moderate:** QA/Test Automation Architect, Quality Engineering Lead (has architected frameworks and owned release sign-off, mentored 5 engineers, but no formal manager title); AI/LLM quality or evaluation engineer; AI tooling / developer productivity (Claude Code + MCP workflows)
+**Entry-level:** iOS or React Native developer (Swift and React Native experience from test code, ~8 months frontend dev), people manager / QA manager with direct reports, backend engineering
 
 ### 3. Behavioral/Culture Fit (0-100)
 Does the role and company culture match the behavioral profile?
@@ -91,9 +96,14 @@ Does the role and company culture match the behavioral profile?
 **Red flags to research:** Department disorganization, work dominated by maintenance over development, poor chemistry with leadership, culture mismatches. Check reviews, media coverage, LinkedIn connections, and network contacts for insider perspective.
 
 ### 4. Location & Logistics (Pass/Fail + Notes)
-- Within commute range: PASS
-- Remote with occasional office: PASS
-- Requires relocation: FAIL (deal-breaker)
+- Remote (India-based or international employer hiring in India): PASS
+- Pune or Bengaluru (relocation within India is welcome; top priority): PASS
+- Delhi NCR (home base; hybrid or on-site): PASS
+- Other Indian cities (Hyderabad, Mumbai, Chennai, etc.): PASS (lower priority)
+- Relocation to Dubai or Europe (incl. UK): PASS only with visa sponsorship / employer work visa (see Eligibility Gate)
+- Other overseas markets (rest of the Middle East, Singapore, Canada, Australia): FAIL - out of scope since 2026-10-25
+- USA, or any overseas role without sponsorship: FAIL
+- Night shifts or permanent US-hours overlap: FAIL (deal-breaker)
 - Frequent international travel: FLAG (discuss with user)
 
 ### 5. Career Alignment & Motivation (0-100)
@@ -107,19 +117,21 @@ Does this role advance career goals and contain tasks that energize?
 | 0-39 | Dead end or backwards step |
 
 **Career goals:**
-- [YOUR_CAREER_GOAL_1]
-- [YOUR_CAREER_GOAL_2]
-- [YOUR_CAREER_GOAL_3]
+- Step up to Staff/Lead SDET or Mobile QA Lead at a **product company** (preferred over IT services/consultancies)
+- Grow into Test Automation Architect / Quality Engineering Lead (IC, people-management, or hybrid tech-lead all acceptable)
+- Specialize in AI/LLM quality engineering, building on voice AI testing and Claude Code + MCP workflows
+- Last-resort directions (score Career Alignment lower): AI tooling / developer productivity engineer, iOS or React Native developer
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
-- Tasks that energize: [YOUR_ENERGIZING_TASKS]
-- Tasks that drain: [YOUR_DRAINING_TASKS]
+- Tasks that energize: challenging technical problems, finding bugs, monkey/exploratory testing, implementing AI, building workflows with AI (Claude Code, MCP), designing frameworks from scratch
+- Tasks that drain: manual documentation, repeated regression cycles, a lot of meetings
+- **Deal-breaker:** pure maintenance of legacy suites with no new building
 - Non-task factors: leadership style, department culture, company values, degree of autonomy
 
 **Life situation alignment:** Consider personal constraints:
-- **Security**: [YOUR_FINANCIAL_SITUATION_CONTEXT]
-- **Flexibility**: [YOUR_SCHEDULE_CONSTRAINTS]
-- **Professional development**: [YOUR_GROWTH_PRIORITIES]
+- **Security**: Employed (current CTC 10 LPA INR), so no pressure to accept a weak fit. **Minimum 17 LPA INR for India-based roles (deal-breaker below that).** Overseas: no fixed floor, judge against the local market and cost of living. If salary is not stated, mark "unverified", do not reject.
+- **Flexibility**: Fully flexible on location (remote, Pune/Bengaluru, NCR, sponsored relocation abroad). No night shifts or permanent US-hours overlap.
+- **Professional development**: Deepen AI and mobile domain expertise; prefer mid-sized teams with autonomy or a technical mentor
 
 ### 6. Salary Benchmark (Optional)
 
